@@ -2,6 +2,7 @@ from torch import nn
 import torch
 import torch.nn.functional as F
 from torch.autograd import Variable
+from torch.cuda import is_available
 
 import math
 from torch.nn import Parameter
