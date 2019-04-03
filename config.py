@@ -4,7 +4,7 @@ configer = EasyDict()
 
 
 configer.dsize = (64, 64)
-configer.n_channel = 23
+configer.n_channels = 23
 configer.n_class = 63
 
 
