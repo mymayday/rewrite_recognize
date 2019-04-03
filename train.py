@@ -100,7 +100,7 @@ def train(configer):
                     format(getTime(), elapsed_time/3600, (total_time - elapsed_time)/3600, configer.batchsize / duration_time,
                             i_epoch, configer.n_epoch, i_batch, len(trainset) // configer.batchsize, 
                             scheduler.get_lr()[-1], acc_i, loss_i)
-            print(print_log)
+            ##print(print_log)
 
             loss_train += [loss_i.detach().cpu().numpy()]
             acc_train  += [acc_i.cpu().numpy()]
