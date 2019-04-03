@@ -134,13 +134,13 @@ class MobileFacenet(nn.Module):
         return 64,64
 
 class ArcMarginProduct(nn.Module):
-    def __init__(self, in_features=128, out_features=200, s=32.0, m=0.50, easy_margin=False):
+    def __init__(self, in_features=128, out_features=63, s=32.0, m=0.50, easy_margin=False):
         super(ArcMarginProduct, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
         self.s = s
         self.m = m
-        self.weight = Parameter(torch.Tensor(out_features, in_features))
+        self.weight = Parameter(torch.cuda.Tensor(out_features, in_features))
         nn.init.xavier_uniform_(self.weight)
         # init.kaiming_uniform_()
         # self.weight.data.normal_(std=0.001)
