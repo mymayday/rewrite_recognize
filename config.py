@@ -33,7 +33,7 @@ configer.mdlspath = '/home/louishsu/Work/Workspace/HUAWEI/pytorch/modelfiles/rec
 
 ## training step
 configer.batchsize = 64
-configer.n_epoch   = 250
+configer.n_epoch   = 200
 
 ## learing rate
 configer.lrbase = 0.005

@@ -5,7 +5,7 @@ from torch.autograd import Variable
 
 import math
 from torch.nn import Parameter
-from dataset.config import configer
+from config import configer
 
 class Bottleneck(nn.Module):
     def __init__(self, inp, oup, stride, expansion):
@@ -94,7 +94,9 @@ class MobileFacenet(nn.Module):
         self.linear7 = ConvBlock(512, 512, k_size, 1, 0, dw=True, linear=True)
         #linear Conv1x1
         self.linear1 = ConvBlock(512, 128, 1, 1, 0, linear=True)
-        
+        #arcface
+        self.arcface=ArcMarginProduct(128,configer.n_class)
+
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
@@ -102,6 +104,8 @@ class MobileFacenet(nn.Module):
             elif isinstance(m, nn.BatchNorm2d):
                 m.weight.data.fill_(1)
                 m.bias.data.zero_()
+        
+
 
     def _make_layer(self, block, setting):
         layers = []
@@ -124,6 +128,7 @@ class MobileFacenet(nn.Module):
         x = self.linear7(x)
         x = self.linear1(x)
         x = x.contiguous().view(x.size(0), -1)
+        x = self.arcface(x)
         
         return x
     
@@ -167,7 +172,7 @@ class ArcMarginProduct(nn.Module):
 
 
 # if __name__ == "__main__":
-#     input = Variable(torch.FloatTensor(2, 3, 112, 96))
+#     input = Variable(torch.FloatTensor(2, 3, 64,64))
 #     net = MobileFacenet()
 #     print(net)
 #     x = net(input)
