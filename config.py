@@ -12,7 +12,7 @@ configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1]
 configer.modelbase = 'recognize_mobilefacenet'
 
 
-configer.datatype = 'RGB'
+configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
     configer.usedChannels = [550]
     configer.n_usedChannels = len(configer.usedChannels)
@@ -36,7 +36,7 @@ configer.batchsize = 64
 configer.n_epoch   = 200
 
 ## learing rate
-configer.lrbase = 1e-3
+configer.lrbase = 1e-4
 configer.stepsize = 200
 configer.gamma = 0.1
 
