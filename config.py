@@ -5,7 +5,7 @@ configer = EasyDict()
 
 configer.dsize = (64, 64)
 configer.n_channels = 23
-configer.n_class = 63
+configer.n_classes = 63
 
 
 configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1])
