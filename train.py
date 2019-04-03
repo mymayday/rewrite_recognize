@@ -14,6 +14,7 @@ from tensorboardX import SummaryWriter
 from datasets import RecognizeDataset
 from models import modeldict
 from utiles import accuracy, getTime
+from models.mobilefacenet import ArcMarginProduct
 
 def train(configer):
 
@@ -29,6 +30,8 @@ def train(configer):
     if not os.path.exists(modeldir): os.makedirs(modeldir)
     model = modeldict[configer.modelbase](configer.n_usedChannels, configer.n_class, configer.dsize[0])
     if configer.cuda and is_available(): model.cuda()
+    
+    ArcMargin = ArcMarginProduct(128,configer.n_classes)
 
     ## loss
     loss = nn.CrossEntropyLoss()
@@ -73,7 +76,11 @@ def train(configer):
                 X = X.cuda(); y = y.cuda()
 
             # forward
-            y_pred_prob = model(X)
+            if model==MobileFacenet():
+                raw_logits = model(X)
+                y_pred_prob = ArcMargin(raw_logits, y)
+            else:
+                y_pred_prob = model(X)
             loss_i = loss(y_pred_prob, y)
             acc_i  = accuracy(y_pred_prob, y)
 
