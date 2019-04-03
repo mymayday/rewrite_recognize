@@ -140,7 +140,8 @@ class ArcMarginProduct(nn.Module):
         self.out_features = out_features
         self.s = s
         self.m = m
-        self.weight = Parameter(torch.cuda.Tensor(out_features, in_features))
+        if configer.cuda and is_available():
+            self.weight = Parameter(torch.cuda.Tensor(out_features, in_features))
         nn.init.xavier_uniform_(self.weight)
         # init.kaiming_uniform_()
         # self.weight.data.normal_(std=0.001)
