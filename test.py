@@ -9,6 +9,7 @@ from torch.utils.data import DataLoader
 
 from datasets import RecognizeDataset
 from utiles import accuracy, getTime
+from models.mobilefacenet import ArcMarginProduct
 
 def test(configer):
 
@@ -32,6 +33,7 @@ def test(configer):
     ## initialize
     acc_test = []; loss_test = []
     output = None
+    ArcMargin = ArcMarginProduct(128,configer.n_class)
 
     ## start testing
     model.eval()
