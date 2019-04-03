@@ -29,6 +29,7 @@ def train(configer):
     modeldir  = '/'.join(modelpath.split('/')[:-1])
     if not os.path.exists(modeldir): os.makedirs(modeldir)
     model = modeldict[configer.modelbase](configer.n_usedChannels, configer.n_class, configer.dsize[0])
+    print(model)
     if configer.cuda and is_available(): model.cuda()
     
     ArcMargin = ArcMarginProduct(128,configer.n_class)
