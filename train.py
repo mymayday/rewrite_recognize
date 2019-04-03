@@ -29,7 +29,6 @@ def train(configer):
     modeldir  = '/'.join(modelpath.split('/')[:-1])
     if not os.path.exists(modeldir): os.makedirs(modeldir)
     model = modeldict[configer.modelbase](configer.n_usedChannels, configer.n_class, configer.dsize[0])
-    print(model)
     if configer.cuda and is_available(): model.cuda()
     
     ArcMargin = ArcMarginProduct(128,configer.n_class)
@@ -77,7 +76,7 @@ def train(configer):
                 X = X.cuda(); y = y.cuda()
 
             # forward
-            if model==MobileFacenet():
+            if configer.modelbase == 'recognize_mobilefacenet':
                 raw_logits = model(X)
                 y_pred_prob = ArcMargin(raw_logits, y)
             else:
