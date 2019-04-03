@@ -124,7 +124,7 @@ def train(configer):
             # log
             print_log = "{} || Epoch: [{:3d}]/[{:3d}] | Batch: [{:3d}]/[{:3d}] || accuracy: {:2.2%}, loss: {:4.4f}".\
                     format(getTime(), i_epoch, configer.n_epoch, i_batch, len(validset) // configer.batchsize, acc_i, loss_i)
-            print(print_log)
+            #print(print_log)
 
             loss_valid += [loss_i.detach().cpu().numpy()]
             acc_valid  += [acc_i.cpu().numpy()]
