@@ -31,7 +31,7 @@ def train(configer):
     model = modeldict[configer.modelbase](configer.n_usedChannels, configer.n_class, configer.dsize[0])
     if configer.cuda and is_available(): model.cuda()
     
-    ArcMargin = ArcMarginProduct(128,configer.n_classes)
+    ArcMargin = ArcMarginProduct(128,configer.n_class)
 
     ## loss
     loss = nn.CrossEntropyLoss()
