@@ -12,7 +12,7 @@ configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1]
 configer.modelbase = 'recognize_vgg11_bn'
 
 
-configer.datatype = 'RGB'
+configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
     configer.usedChannels = [990]
     configer.n_usedChannels = len(configer.usedChannels)
