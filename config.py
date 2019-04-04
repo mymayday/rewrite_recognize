@@ -36,7 +36,7 @@ configer.batchsize = 64
 configer.n_epoch   = 250
 
 ## learing rate
-configer.lrbase = 1e-4
+configer.lrbase = 0.005
 configer.stepsize = 200
 configer.gamma = 0.1
 
