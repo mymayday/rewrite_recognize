@@ -38,7 +38,8 @@ def train(configer):
 
     ## optimizer
     params = model.parameters()
-    optimizer = optim.Adam(params, configer.lrbase, weight_decay=1e-3)
+    #optimizer = optim.Adam(params, configer.lrbase, weight_decay=1e-3)
+    optimizer = optim.Adam(params, configer.lrbase)
 
     ## learning rate scheduler
     scheduler = lr_scheduler.StepLR(optimizer, configer.stepsize, configer.gamma)
