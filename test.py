@@ -49,7 +49,7 @@ def test(configer):
 
             raw_logits = model(X)
             y_pred_prob = ArcMargin(raw_logits, y)
-            print('right')
+            
         else:
             y_pred_prob = model(X)
         #y_pred_prob = model(X)
