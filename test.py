@@ -46,10 +46,12 @@ def test(configer):
 
         # forward
         if configer.modelbase == 'recognize_mobilefacenet':
-                raw_logits = model(X)
-                y_pred_prob = ArcMargin(raw_logits, y)
+
+            raw_logits = model(X)
+            y_pred_prob = ArcMargin(raw_logits, y)
+            print('right')
         else:
-                y_pred_prob = model(X)
+            y_pred_prob = model(X)
         #y_pred_prob = model(X)
         loss_i = loss(y_pred_prob, y)
         acc_i  = accuracy(y_pred_prob, y)
