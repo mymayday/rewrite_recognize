@@ -33,7 +33,7 @@ configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize'
 
 ## training step
 configer.batchsize = 64
-configer.n_epoch   = 250
+configer.n_epoch   = 400
 
 ## learing rate
 configer.lrbase = 0.005
