@@ -9,8 +9,8 @@ configer.n_class = 63
 
 
 configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1])
-#configer.modelbase = 'recognize_mobilefacenet'
-configer.modelbase ='recognize_mobilenet'
+configer.modelbase = 'recognize_mobilefacenet'
+#configer.modelbase ='recognize_mobilenet'
  
 
 configer.datatype = 'Multi'
