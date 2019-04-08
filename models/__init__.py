@@ -12,4 +12,5 @@ modeldict = {
     'recognize_squeeze_v11'  : lambda inp, outp, size: SqueezeNet(inp, outp, version=1.1),
     'recognize_dense121'     : lambda inp, outp, size: DenseNet(in_channels=inp, num_classes=outp),
     'recognize_mobilefacenet': lambda inp, outp, size: MobileFacenet(),
+    'recognize_mobilenet'    : lambda inp, outp, size: MobileNet(),
 }
