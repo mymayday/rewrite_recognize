@@ -14,7 +14,7 @@ configer.modelbase = 'recognize_mobilefacenet'
 
 configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
-    configer.usedChannels = [770]
+    configer.usedChannels = [790]
     configer.n_usedChannels = len(configer.usedChannels)
     configer.modelname = '{}_{}_{}chs_{}sta_20nm'.\
                     format(configer.modelbase, configer.splitmode, configer.n_usedChannels, configer.usedChannels[0])
