@@ -5,6 +5,7 @@ from .squeezenet import SqueezeNet
 from .mobilenet_v2 import MobileNetV2
 from .densenet import DenseNet
 from .mobilefacenet import MobileFacenet
+from .mobilenet import MobileNet
 
 modeldict = {
     'recognize_vgg11_bn'     : lambda inp, outp, size: VGG(inp, outp, size, 'VGG11', batch_norm=True),
