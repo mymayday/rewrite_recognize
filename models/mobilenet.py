@@ -3,6 +3,7 @@ import torch.nn as nn
 # import torch.backends.cudnn as cudnn
 import torchvision.models as models
 from torch.autograd import Variable
+from config import configer
 
 class MobileNet(nn.Module):
     def __init__(self):
