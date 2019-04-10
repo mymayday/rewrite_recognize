@@ -15,7 +15,7 @@ def test(configer):
 
     ## datasets
     testset = RecognizeDataset(configer.datapath, configer.datatype, configer.splitmode, 'test', configer.usedChannels)
-    testloader = DataLoader(testset, configer.batchsize, shuffle=False)
+    testloader = DataLoader(testset,configer.batchsize_test, shuffle=False)
 
     ## model
     modelpath = os.path.join(configer.mdlspath, configer.modelname) + '.pkl'
