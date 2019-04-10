@@ -144,7 +144,9 @@ class ArcMarginProduct(nn.Module):
         # if configer.cuda and is_available():
         #     self.weight = Parameter(torch.cuda.FloatTensor(out_features, in_features))
         # nn.init.xavier_uniform_(self.weight)
-        # init.kaiming_uniform_()
+if configer.cuda and is_available():
+        #     self.weight = Parameter(torch.cuda.FloatTensor(out_features, in_features))
+        # nn.init.xavier_uniform_(self.weight)        # init.kaiming_uniform_()
         # self.weight.data.normal_(std=0.001)
 
         self.easy_margin = easy_margin
@@ -155,7 +157,7 @@ class ArcMarginProduct(nn.Module):
         self.mm = math.sin(math.pi - m) * m
 
     def forward(self, x, label):
-        #cosine = F.linear(F.normalize(x), F.normalize(self.weight))
+        cosine = F.linear(F.normalize(x), F.normalize(self.weight))
         sine = torch.sqrt(1.0 - torch.pow(cosine, 2))
         phi = cosine * self.cos_m - sine * self.sin_m
         if self.easy_margin:
