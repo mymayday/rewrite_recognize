@@ -9,8 +9,8 @@ configer.n_class = 63
 
 
 configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1])
-#configer.modelbase = 'recognize_mobilefacenet'
-configer.modelbase ='recognize_mobilenet'
+configer.modelbase = 'recognize_mobilefacenet'
+#configer.modelbase ='recognize_mobilenet'
  
 
 configer.datatype = 'Multi'
@@ -38,7 +38,7 @@ configer.batchsize_test=32
 configer.n_epoch   = 300
 
 ## learing rate
-configer.lrbase = 0.005
+configer.lrbase = 0.01
 configer.stepsize = 100
 configer.gamma = 0.1
 
