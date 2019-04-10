@@ -9,11 +9,11 @@ configer.n_class = 63
 
 
 configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1])
-configer.modelbase = 'recognize_mobilefacenet'
-#configer.modelbase ='recognize_mobilenet'
+#configer.modelbase = 'recognize_mobilefacenet'
+configer.modelbase ='recognize_mobilenet'
  
 
-configer.datatype = 'Multi'
+configer.datatype = 'RGB'
 if configer.datatype == 'Multi':
     configer.usedChannels = [770,850,890]
     configer.n_usedChannels = len(configer.usedChannels)
