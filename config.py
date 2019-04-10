@@ -13,7 +13,7 @@ configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1]
 configer.modelbase ='recognize_mobilenet'
  
 
-configer.datatype = 'RGB'
+configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
     configer.usedChannels = range(550,990)[::20]
     configer.n_usedChannels = len(configer.usedChannels)
