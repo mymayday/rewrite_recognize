@@ -141,12 +141,12 @@ class ArcMarginProduct(nn.Module):
         self.out_features = out_features
         self.s = s
         self.m = m
-        # if configer.cuda and is_available():
-        #     self.weight = Parameter(torch.cuda.FloatTensor(out_features, in_features))
-        # nn.init.xavier_uniform_(self.weight)
+        if configer.cuda and is_available():
+            self.weight = Parameter(torch.cuda.FloatTensor(out_features, in_features))
+        nn.init.xavier_uniform_(self.weight)
         
         # init.kaiming_uniform_()
-        # self.weight.data.normal_(std=0.001)
+        self.weight.data.normal_(std=0.001)
 
         self.easy_margin = easy_margin
         self.cos_m = math.cos(m)
