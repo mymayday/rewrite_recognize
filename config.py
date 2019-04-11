@@ -15,7 +15,7 @@ configer.modelbase ='recognize_mobilenet'
 
 configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
-    configer.usedChannels =[790]
+    configer.usedChannels =[750]
     #configer.usedChannels = range(550,1000)[::20]
     configer.n_usedChannels = len(configer.usedChannels)
     configer.modelname = '{}_{}_{}chs_{}sta_20nm'.\
@@ -34,13 +34,13 @@ configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize'
 
 
 ## training step
-configer.batchsize = 64
-configer.batchsize_test=64
+configer.batchsize = 50
+configer.batchsize_test=50
 configer.n_epoch   = 300
 
 ## learing rate
 configer.lrbase = 0.005
-configer.stepsize = 100
+configer.stepsize = 200
 configer.gamma = 0.1
 
 configer.cuda = True
