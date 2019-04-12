@@ -42,6 +42,6 @@ configer.n_epoch   = 300
 ## learing rate
 configer.lrbase = 0.005
 configer.stepsize = 200
-configer.gamma = 0.2
+configer.gamma = 0.1
 
 configer.cuda = True
