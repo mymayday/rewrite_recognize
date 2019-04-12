@@ -39,8 +39,8 @@ configer.batchsize_test=64
 configer.n_epoch   = 300
 
 ## learing rate
-configer.lrbase = 0.001
+configer.lrbase = 0.005
 configer.stepsize = 200
-configer.gamma = 0.1
+configer.gamma = 0.2
 
 configer.cuda = True
