@@ -103,8 +103,7 @@ class MobileFacenet(nn.Module):
             elif isinstance(m, nn.BatchNorm2d):
                 m.weight.data.fill_(1)
                 m.bias.data.zero_()
-        self.weight = Parameter(torch.Tensor(configer.n_class, 128))
-        nn.init.xavier_uniform_(self.weight)
+        
 
 
     def _make_layer(self, block, setting):
@@ -142,9 +141,9 @@ class ArcMarginProduct(nn.Module):
         self.out_features = out_features
         self.s = s
         self.m = m
-        # if configer.cuda and is_available():
-        #     self.weight = Parameter(torch.cuda.FloatTensor(out_features, in_features))
-        # nn.init.xavier_uniform_(self.weight)
+        if configer.cuda and is_available():
+            self.weight = Parameter(torch.cuda.FloatTensor(out_features, in_features))
+        nn.init.xavier_uniform_(self.weight)
         
         # init.kaiming_uniform_()
         self.weight.data.normal_(std=0.001)
