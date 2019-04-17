@@ -22,7 +22,7 @@ if configer.datatype == 'Multi':
     configer.modelname = '{}_{}_{}chs_{}sta_20nm'.\
                     format(configer.modelbase, configer.splitmode, configer.n_usedChannels, configer.usedChannels[0])
 elif configer.datatype == 'RGB':
-    configer.usedChannels = 'R'
+    configer.usedChannels = 'G'
     configer.n_usedChannels = len(configer.usedChannels)
     configer.modelname = '{}_{}_{}'.\
                     format(configer.modelbase, configer.splitmode, configer.usedChannels)
