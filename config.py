@@ -16,7 +16,7 @@ configer.modelbase ='recognize_mobilenet'
 
 configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
-    configer.usedChannels =[690]
+    configer.usedChannels =[710]
     #configer.usedChannels = range(550,1000)[::20]
     configer.n_usedChannels = len(configer.usedChannels)
     configer.modelname = '{}_{}_{}chs_{}sta_20nm'.\
