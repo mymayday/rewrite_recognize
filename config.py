@@ -14,7 +14,7 @@ configer.modelbase ='recognize_mobilenet'
 #configer.modelbase = 'recognize_vgg11_bn'
  
 
-configer.datatype = 'Multi'
+configer.datatype = 'RGB'
 if configer.datatype == 'Multi':
     #configer.usedChannels =[990]
     configer.usedChannels = range(550,1000)[::20]
