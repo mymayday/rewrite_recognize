@@ -8,7 +8,7 @@ configer.n_channels = 23
 configer.n_class = 63
 
 
-configer.splitmode = 'split_{}x{}_5'.format(configer.dsize[0], configer.dsize[1])
+configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1])
 #configer.modelbase = 'recognize_mobilefacenet'
 configer.modelbase ='recognize_mobilenet'
 #configer.modelbase = 'recognize_vgg11_bn'
@@ -17,9 +17,10 @@ configer.modelbase ='recognize_mobilenet'
 configer.datatype = 'RGB'
 if configer.datatype == 'Multi':
     #configer.usedChannels =[770,850,730,810,890]
-    configer.usedChannels =[770,850,730,810,890,750,790]
+    #configer.usedChannels =[770,850,730,810,890,750,790]
     #configer.usedChannels =[770,850,730]
     #configer.usedChannels = range(550,1000)[::20]
+    configer.usedChannels =[770,850,730,810,890,750,790,830,870]
     configer.n_usedChannels = len(configer.usedChannels)
     configer.modelname = '{}_{}_{}chs_{}sta_20nm'.\
                     format(configer.modelbase, configer.splitmode, configer.n_usedChannels, configer.usedChannels[0])
