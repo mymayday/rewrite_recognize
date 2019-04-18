@@ -16,7 +16,7 @@ configer.modelbase ='recognize_mobilenet'
 
 configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
-    configer.usedChannels =[770,850,730,810,890]
+    #configer.usedChannels =[770,850,730,810,890]
     configer.usedChannels =[770,850,730,810,890,750,790]
     #configer.usedChannels =[770,850,730]
     #configer.usedChannels = range(550,1000)[::20]
