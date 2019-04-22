@@ -20,7 +20,7 @@ if configer.datatype == 'Multi':
     #configer.usedChannels =[770,850,730]
     #configer.usedChannels = range(550,1000)[::20]
     #configer.usedChannels =[770,850,730,810,890,750,790,830,870,910,930,950,710,990,970,690,670,650,590,630,570]
-    configer.usedChannels =[970]
+    configer.usedChannels =[990]
     configer.n_usedChannels = len(configer.usedChannels)
     configer.modelname = '{}_{}_{}chs_{}sta_20nm'.\
                     format(configer.modelbase, configer.splitmode, configer.n_usedChannels, configer.usedChannels[0])
