@@ -32,8 +32,8 @@ elif configer.datatype == 'RGB':
 
 configer.datapath = '/datasets/ECUST2019_{}x{}'.\
                                 format(configer.dsize[0], configer.dsize[1])
-configer.logspath = '/home/siminzhu/rewrite_recognize/logs'
-configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize'
+configer.logspath = '/home/siminzhu/rewrite_recognize/logs/Mobilenet'
+configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize/Mobilenet'
 
 
 ## training step
