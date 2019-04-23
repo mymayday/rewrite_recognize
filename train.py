@@ -30,7 +30,7 @@ def train(configer):
 #     if not os.path.exists(modeldir): os.makedirs(modeldir)
 #     model = modeldict[configer.modelbase](configer.n_usedChannels, configer.n_class, configer.dsize[0])
     model=torch.load("init.pkl")
-    if configer.cuda and is_available(): model.cuda()
+    #if configer.cuda and is_available(): model.cuda()
     
     #ArcMargin = ArcMarginProduct(128,configer.n_class)
 
