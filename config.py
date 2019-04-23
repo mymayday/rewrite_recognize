@@ -13,7 +13,7 @@ configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1]
 configer.modelbase ='recognize_mobilenet'
 #configer.modelbase = 'recognize_shufflev2'
 
-configer.datatype = 'RGB'
+configer.datatype = 'Multi'
 if configer.datatype == 'Multi':
     #configer.usedChannels =[770,850,730,810,890]
     #configer.usedChannels =[770,850,730,810,890,750,790]
@@ -33,8 +33,8 @@ elif configer.datatype == 'RGB':
 
 configer.datapath = '/datasets/ECUST2019_{}x{}'.\
                                 format(configer.dsize[0], configer.dsize[1])
-configer.logspath = '/home/siminzhu/rewrite_recognize/logs'
-configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize'
+configer.logspath = '/home/siminzhu/rewrite_recognize/logs/Mobilenetpre'
+configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize/Mobilenetpre'
 
 
 ## training step
