@@ -1,7 +1,7 @@
 import os
 import torch
 from models.mobilenet import MobileNet
-
+from config import configer
 
 preinit="./init.pkl"
 net=MobileNet()
