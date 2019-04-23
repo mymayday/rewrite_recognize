@@ -13,7 +13,7 @@ configer.splitmode = 'split_{}x{}_5'.format(configer.dsize[0], configer.dsize[1]
 configer.modelbase ='recognize_mobilenet'
 #configer.modelbase = 'recognize_shufflev2'
 
-configer.datatype = 'Multi'
+configer.datatype = 'RGB'
 if configer.datatype == 'Multi':
     #configer.usedChannels =[770,850,730,810,890]
     #configer.usedChannels =[770,850,730,810,890,750,790]
