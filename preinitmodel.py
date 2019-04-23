@@ -2,6 +2,7 @@ import os
 import torch
 from models.mobilenet import MobileNet
 from config import configer
+from torch.cuda import is_available
 
 preinit="./init.pkl"
 net=MobileNet()
