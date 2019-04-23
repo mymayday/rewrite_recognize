@@ -5,6 +5,7 @@ from models.mobilenet import MobileNet
 
 preinit="./init.pkl"
 net=MobileNet()
+if configer.cuda and is_available(): net.cuda()
 
 if not os.path.exists(preinit):
   torch.save(net.state_dict(),preinit)
