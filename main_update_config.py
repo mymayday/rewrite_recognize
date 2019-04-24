@@ -400,7 +400,7 @@ def main_finetune_channels():
             configer.cuda = True
 
             configer.splitmode = 'split_{}x{}_{}'.format(configer.dsize[0], configer.dsize[1], splitidx)
-            configer.modelbase = 'recognize_vgg11_bn'
+            configer.modelbase = 'recognize_mobilenet'
 
             configer.usedChannels = usedChannels
             configer.n_usedChannels = len(configer.usedChannels)
@@ -719,11 +719,11 @@ def main_pca():
 
 if __name__ == "__main__":
 
-    # main_finetune_channels()
+    main_finetune_channels()
     # print("PCA------------------------------------------------------")
     # main_pca()                 
-    # main_split()
+    #main_split()
     # print("单侧图像---------------------------------------------------")
-    main_best_channels()        
-    # main_several_channels()
-    # main_several_channels_k_fold()
+    #main_best_channels()        
+    #main_several_channels()
+    #main_several_channels_k_fold()
