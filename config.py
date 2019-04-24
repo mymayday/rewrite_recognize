@@ -8,7 +8,7 @@ configer.n_channels = 23
 configer.n_class = 63
 
 
-configer.splitmode = 'split_{}x{}_1'.format(configer.dsize[0], configer.dsize[1])
+configer.splitmode = 'split_{}x{}_2'.format(configer.dsize[0], configer.dsize[1])
 #configer.modelbase = 'recognize_mobilefacenet'
 configer.modelbase ='recognize_mobilenet'
 #configer.modelbase = 'recognize_shufflev2'
@@ -33,8 +33,8 @@ elif configer.datatype == 'RGB':
 
 configer.datapath = '/datasets/ECUST2019_{}x{}'.\
                                 format(configer.dsize[0], configer.dsize[1])
-configer.logspath = '/home/siminzhu/rewrite_recognize/logs/Mobilenetpre'
-configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize/Mobilenetpre'
+configer.logspath = '/home/siminzhu/rewrite_recognize/logs'
+configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize'
 
 
 ## training step
