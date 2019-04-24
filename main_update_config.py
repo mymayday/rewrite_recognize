@@ -62,14 +62,15 @@ def main_split():
 
             configer.datapath = '/datasets/ECUST2019_{}x{}'.\
                                             format(configer.dsize[0], configer.dsize[1])
-            configer.logspath = '/home/louishsu/Work/Workspace/HUAWEI/pytorch/logs/{}_{}_{}subjects_logs'.\
+            configer.logspath = '/home/siminzhu/rewrite_recognize/logs/{}_{}_{}subjects_logs'.\
                                             format(configer.modelbase, configer.splitmode, configer.n_class)
-            configer.mdlspath = '/home/louishsu/Work/Workspace/HUAWEI/pytorch/modelfiles/{}_{}_{}subjects_models'.\
+            configer.mdlspath = '/home/siminzhu/rewrite_recognize/modelfiles/recognize/{}_{}_{}subjects_models'.\
                                             format(configer.modelbase, configer.splitmode, configer.n_class)
-
+            
+            
             train(configer)
             test(configer)
-            gen_out_excel(configer)
+            #gen_out_excel(configer)
 
 def main_best_channels():
 
