@@ -27,11 +27,17 @@ def train(configer):
     ## model
     modelpath = os.path.join(configer.mdlspath, configer.modelname) + '.pkl'
     modeldir  = '/'.join(modelpath.split('/')[:-1])
-    if not os.path.exists(modeldir): os.makedirs(modeldir)
     model = modeldict[configer.modelbase](configer.n_usedChannels, configer.n_class, configer.dsize[0])
-    if configer.cuda and is_available(): model.cuda()
+    if not os.path.exists(modeldir): 
+        os.makedirs(modeldir)
+        torch.save(model.state_dict(), modelpath)
+    else:
+        model.load_state_dict(torch.load())
     
-    ArcMargin = ArcMarginProduct(128,configer.n_class)
+    model=torch.load("init.pkl")
+    #if configer.cuda and is_available(): model.cuda()
+    
+    #ArcMargin = ArcMarginProduct(128,configer.n_class)
 
     ## loss
     loss = nn.CrossEntropyLoss() 

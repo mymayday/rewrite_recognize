@@ -40,9 +40,9 @@ class MobileNet(nn.Module):
             conv_dw(512, 512, 1),
             conv_dw(512, 512, 1),
             conv_dw(512, 512, 1),
-            conv_dw(512, 1024, 2),
+            conv_dw(512, 1024, 1),
             conv_dw(1024, 1024, 1),
-            nn.AvgPool2d(7),
+            nn.AvgPool2d(4),
         )
         self.fc = nn.Linear(1024,configer.n_class )
 
